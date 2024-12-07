@@ -17,4 +17,6 @@ This should be useful for people looking to work on comparative genomics project
 - An XML file is first prepared containing all the orthologues of the provided geneid
 - This xml file is parsed as csv files (here since I am interested on fishes I have made a separate csv file containing only the 'euteleostomi' orthologues)
 
-  
+# Usage
+''' $ python3 /path/to/the/script/script.py
+''' $ give a human geneid from ensembl to search: 
