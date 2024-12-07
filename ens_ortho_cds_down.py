@@ -7,6 +7,9 @@ import pandas as pd
 import os, glob, shutil
 
 #a script to download cds of a given human geneid using the ENSEMBL REST APIs
+#my previous preferred way to download cds was (see here: https://pmc.ncbi.nlm.nih.gov/articles/PMC3855309/) using the EASER script, which used PyCogent,
+#which is now not developed and has been modified to cogent3 and EnsemblLite (ensembl-tui or eti)
+#this script can be modified for every use case in the rest.ensembl.org and download anything the user likes 
 
 ensid=input("give a human geneid from ensembl to search: ")
 def download_seqids_ensembl_restapi(ext_master):    
@@ -105,12 +108,8 @@ curr_dir = os.getcwd()#what is the current directory
 files = glob.iglob(os.path.join(curr_dir, "*.json"))#make a list of all json files in this directory
 fastas = glob.iglob(os.path.join(curr_dir, "*.fasta"))#make a list of all fasta files in this directory
 paths = os.path.abspath(os.getcwd())#getting the path of the current directory to create a path for all json and fasta files to be copied in the next commands
-#paths
-#'/home/siby/workspace/works/ensembl_dl'
 path_json = paths+"/jsons"
 path_fasta = paths+"/fasta_cds"
-#path_json
-#'/home/siby/workspace/works/ensembl_dl/jsons'
 for file in files:#let's move all json file to the cerated 'jsons' directory
     if os.path.isfile(file):
         shutil.move(file, path_json)
@@ -120,8 +119,6 @@ for fasta_file in fastas:#Let's move all the fasta files to the created fasta_cd
         shutil.move(fasta_file, path_fasta)
 
 path_fasta_files = path_fasta+"/*.fasta"
-#path_fasta_files
-#'/home/siby/workspace/works/ensembl_dl/fasta_cds/*.fasta'
 fasta_files = glob.glob(path_fasta_files)
 with open("concatenated_fasta.fasta", "wb") as outfile:#now we are going to concatenate the fasta files in the fasta_cds directory to a concatenated_fasta.fasta file
     for filename in fasta_files:
