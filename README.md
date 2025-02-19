@@ -2,8 +2,12 @@
 A script useful to download all orthologues as cds, of a Human Gene from the Compara database.
 
 # Uses ENSEMBL REST API
-My previous preferred way to download cds was (see here: https://pmc.ncbi.nlm.nih.gov/articles/PMC3855309/) using the EASER script, which used PyCogent, which is now not developed and has been modified to cogent3 and EnsemblLite (ensembl-tui or eti). This script can be modified for every use case in the rest.ensembl.org and download anything the user likes. 
-Currently a raw_input style is used, which can be modified if the user likes such a style. My personal use case is satisfied by this script.
+My previous preferred way to download cds was (see here: https://pmc.ncbi.nlm.nih.gov/articles/PMC3855309/) using the EASER script, which used PyCogent, which is now not developed and has been modified to cogent3 and EnsemblLite (ensembl-tui or eti). This script can be modified for every use case in the rest.ensembl.org and download orthologues likes. 
+
+Currently a raw_input style is used, which can be modified if the user likes.
+
+This script is especially prepared to download all fish orthologues (CDS) for a given human ENSEMBL GENE ID
+
 After analyses, to finally present a tree or to parse results, the sequence headers in fasta file or header should be modified with a separate programme/script.
 # Downloads cds of orthologues in compara database
 This circumvents the step of finding the orthologues of all the genes that you are interested using some external programme. The ensembl database has the orthologues already calculated and stored in the compara database.
