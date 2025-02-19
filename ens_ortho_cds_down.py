@@ -12,6 +12,11 @@ import os, glob, shutil
 #this script can be modified for every use case in the rest.ensembl.org and download anything the user likes 
 
 ensid=input("give a human geneid from ensembl to search: ")
+
+masterdir=os.getcwd()
+os.makedirs(ensid)
+chdir=masterdir+'/'+ensid
+os.chdir(chdir)
 def download_seqids_ensembl_restapi(ext_master):    
     server = "https://rest.ensembl.org"
     #ext_master
@@ -55,7 +60,7 @@ df = pd.DataFrame(rows, columns=cols)
 # Writing dataframe to csv
 df.to_csv('output.csv')
 ndf = df[df['taxonomy_level']=='Euteleostomi']#selecting only fishes
-#ndf = df[(df['taxonomy_level']=='Euteleostomi') & (df['taxonomy_level']=='Sarcoptrygii')] # if we need latimeria can add & to get hag fish and petromyzon using 'vertebrata'
+#ndf = df[(df['taxonomy_level']=='Euteleostomi') & (df['taxonomy_level']=='Sarcopterygii')] # if we need latimeria can add & to get hag fish and petromyzon using 'vertebrata'
 ndf.to_csv('euteleostomi_orthologues.csv')
 #Downloading json files for eveny pids to extract Parent===============================================================================
 def download_transcript_ensembl_restapi(gid):
@@ -124,3 +129,5 @@ with open("concatenated_fasta.fasta", "wb") as outfile:#now we are going to conc
     for filename in fasta_files:
         with open(filename,"rb") as infile:
             shutil.copyfileobj(infile,outfile)
+
+os.chdir(masterdir)
