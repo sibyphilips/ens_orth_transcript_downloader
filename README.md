@@ -14,7 +14,8 @@ This circumvents the step of finding the orthologues of all the genes that you a
 This should be useful for people looking to work on comparative genomics projects.
 
 # steps
-- A user is asked to provide a Human Geneid for the corresponding orthologues that the user wants.
+- **Usage** ```python ens_orth_transcript_downloader.py XXX.txt ```
+- The XXX.txt should contain a list of ENSEMBL GeneIDs (humans) and it should be an argument in the above command.
 - All orthologues (one to one, one to many, many to many etc.) are downloaded from the ENSEMBL COMPARA database
 - The resulting *.csv file is parsed to get the protein IDs and then search for the TRANSCRIPTS
 - The transcript IDs are used to download the corresponding CDS as separate fasta files
@@ -24,7 +25,4 @@ This should be useful for people looking to work on comparative genomics project
 - An XML file is first prepared containing all the orthologues of the provided geneid
 - This xml file is parsed as csv files (here since I am interested on fishes I have made a separate csv file containing only the 'euteleostomi' orthologues)
 
-# Usage
-```$python3 /path/to/the/script/this_script.py```
 
-```$give a human geneid from ensembl to search:#provide the ENSG--- here ```
