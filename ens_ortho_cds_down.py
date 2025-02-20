@@ -134,4 +134,4 @@ with open(ensid_file, "r") as enfil:
                     with open(filename,"rb") as infile:
                         shutil.copyfileobj(infile,outfile)
             os.chdir(masterdir)
-print("Orthologs for these human ensembl gene ids were downloaded: "+ensid_list)
+#print("Orthologs for these human ensembl gene ids were downloaded: "+ensid_list)
