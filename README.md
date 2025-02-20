@@ -4,7 +4,7 @@ A script useful to download all orthologues as cds, of a Human Gene from the Com
 # Uses ENSEMBL REST API
 My previous preferred way to download cds was (see here: https://pmc.ncbi.nlm.nih.gov/articles/PMC3855309/) using the EASER script, which used PyCogent, which is now not developed and has been modified to cogent3 and EnsemblLite (ensembl-tui or eti). This script can be modified for every use case in the rest.ensembl.org and download orthologues likes. 
 
-Currently a raw_input style is used, which can be modified if the user likes.
+Currently ensemblIDs can be provided via a ```sys.argv()```.
 
 This script is especially prepared to download all fish orthologues (CDS) for a given human ENSEMBL GENE ID
 
@@ -24,5 +24,7 @@ This should be useful for people looking to work on comparative genomics project
 - A Single Fasta File containing all the downloaded CDS is produced in the current working directory
 - An XML file is first prepared containing all the orthologues of the provided geneid
 - This xml file is parsed as csv files (here since I am interested on fishes I have made a separate csv file containing only the 'euteleostomi' orthologues)
+
+  An alternate method could be to use zebrafish ENS ids and download orthologues for all the fishes, for that I have to closely study the xml output to understand under which group name the fishes are grouped!
 
 
