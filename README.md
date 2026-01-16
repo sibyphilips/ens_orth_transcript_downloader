@@ -4,7 +4,7 @@ A script useful to download all orthologues as cds, of a Human Gene from the Com
 
 It uses ENSEMBL REST API.
 
-My previous preferred way to download cds was (see here: https://pmc.ncbi.nlm.nih.gov/articles/PMC3855309/) using the EASER script, which used PyCogent, which is now not developed and has been modified to cogent3 and EnsemblLite (ensembl-tui or eti). This script can be modified for every use case in the rest.ensembl.org and download orthologues. 
+My previous preferred way to download cds was (see here: https://pmc.ncbi.nlm.nih.gov/articles/PMC3855309/) using the EASER script [^1], which used PyCogent, which is now not developed and has been modified to cogent3 and EnsemblLite (ensembl-tui or eti). This script can be modified for every use case in the rest.ensembl.org and download orthologues. 
 
 ```python3 fetch_orthologues.py```
 
@@ -12,7 +12,7 @@ The input file is given as a text file via sys_argv (see line 140: "input_arg = 
 
 # 2. Align the downloaded sequences and Trim them
 
-The script ```python3 2_6_align_and_trim.py```, is prepared to align the already downloaded sequences using MAFFT [^1] and then trim the sequences considering them as codons. With the "relaxed" parameters of having half of the sequences with gaps or ambiguities. This same script is used in step 6 as well.
+The script ```python3 2_6_align_and_trim.py```, is prepared to align the already downloaded sequences using MAFFT [^2] and then trim the sequences, using GBlocks [^3] considering them as codons. With the "relaxed" parameters of having half of the sequences with gaps or ambiguities. This same script is used in step 6 as well.
 
 # 3. Finding Homologs of the downloaded "genes" from our transcriptomes
 
@@ -40,4 +40,6 @@ we use:
 * Partitioning by codon positions (1,2,3)
 
 # References
-[^1]: Katoh K, Misawa K, Kuma K, et al. MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform. Nucleic Acids Res 2002;30:3059–66.
+[^1]: Maldonado E, Khan I, Philip S, Vasconcelos V, Antunes A. EASER: Ensembl Easy Sequence Retriever. Evol Bioinform Online. 2013 Nov 24;9:487-90. doi: 10.4137/EBO.S11335. PMID: 24324324; PMCID: PMC3855309.
+[^2]: Katoh K, Misawa K, Kuma K, et al. MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform. Nucleic Acids Res 2002;30:3059–66.
+[^3]: Talavera, G., and Castresana, J. (2007). Improvement of phylogenies after removing divergent and ambiguously aligned blocks from protein sequence alignments. Systematic Biology 56, 564-577.
