@@ -12,15 +12,15 @@ The input file is given as a text file via sys_argv (see line 140: "input_arg = 
 
 # 2. Align the downloaded sequences and Trim them
 
-The script ```python3 2_6_align_and_trim.py```, is prepared to align the already downloaded sequences using MAFFT and then trim the sequences considering them as codons. With the "relaxed" parameters of having half of the sequences with gaps or ambiguities. This same script is used in step 6 as well.
+The script ```python3 2_6_align_and_trim.py```, is prepared to align the already downloaded sequences using MAFFT [^Katoh K, Misawa K, Kuma K, et al. MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform. Nucleic Acids Res 2002;30:3059–66.] and then trim the sequences considering them as codons. With the "relaxed" parameters of having half of the sequences with gaps or ambiguities. This same script is used in step 6 as well.
 
 # 3. Finding Homologs of the downloaded "genes" from our transcriptomes
 
 We can use the script ```python3 3_fetch_homologs_hmmer.py``` to 
 
-* 1. Make a HMMER profile using the alignments 
-* 2. Conduct HMMER-SEARCH against our CDS sequences (Transcriptome assembly) 
-* 3. output the homologue sequences into its own files
+* Make a HMMER (http://hmmer.org) profile using the alignments 
+* Conduct HMMER-SEARCH against our CDS sequences (Transcriptome assembly) 
+* output the homologue sequences into its own files
 
 # 4. Create a "Homolog" fasta file join it with "ortholog" fasta file
 
