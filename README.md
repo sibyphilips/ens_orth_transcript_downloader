@@ -12,7 +12,7 @@ The input file is given as a text file via sys_argv (see line 140: "input_arg = 
 
 # 2. Align the downloaded sequences and Trim them
 
-The script ```python3 2_6_align_and_trim.py```, is prepared to align the already downloaded sequences using MAFFT [^Katoh K, Misawa K, Kuma K, et al. MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform. Nucleic Acids Res 2002;30:3059–66.] and then trim the sequences considering them as codons. With the "relaxed" parameters of having half of the sequences with gaps or ambiguities. This same script is used in step 6 as well.
+The script ```python3 2_6_align_and_trim.py```, is prepared to align the already downloaded sequences using MAFFT [^1] and then trim the sequences considering them as codons. With the "relaxed" parameters of having half of the sequences with gaps or ambiguities. This same script is used in step 6 as well.
 
 # 3. Finding Homologs of the downloaded "genes" from our transcriptomes
 
@@ -38,3 +38,6 @@ we use:
 * Ultrafast bootstrap 1000
 * -m MFP+MERGE
 * Partitioning by codon positions (1,2,3)
+
+# References
+[^1] Katoh K, Misawa K, Kuma K, et al. MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform. Nucleic Acids Res 2002;30:3059–66.
